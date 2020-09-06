@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.AppController">
+    <tabs>
+        <Tab text="Status">
+            <content>
+                <StackPane minHeight="600" minWidth="800" prefHeight="600" prefWidth="1200">
+                    <AnchorPane minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" maxHeight="600" maxWidth="800">
+                        <children>
+                            <Label layoutX="10.0" layoutY="13.0" text="Load XML path:" />
+                            <TextField fx:id="loadXMLFileTextField" editable="false" layoutX="116.0" layoutY="8.0" promptText="C:/Users/File.xml" />
+                            <Button fx:id="loadXMLButton" layoutX="293.0" layoutY="8.0" mnemonicParsing="false" onAction="#onLoadXMLFile" prefHeight="20.0" text="Load XML" />
+
+                            <Label layoutX="395.0" layoutY="13.0" text="Export XML path:" />
+                            <TextField fx:id="exportXMLFileTextField" editable="false" layoutX="515.0" layoutY="8.0" promptText="C:/Users/File" />
+                            <Button layoutX="690.0" layoutY="8.0" mnemonicParsing="false" onAction="#onExportXML" prefHeight="20.0" prefWidth="100.0" text="Export XML" />
+
+                            <Button layoutX="690.0" layoutY="41.0" mnemonicParsing="false" onAction="#onExportText" prefHeight="23.0" prefWidth="100.0" text="Export Text" />
+
+                            <Label alignment="CENTER" layoutX="100.0" layoutY="80.0" prefHeight="40.0" prefWidth="350.0" style="-fx-background-color: #919191; -fx-border-color: black;" text="Initial Runway Parameters">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label alignment="CENTER" layoutX="450.0" layoutY="80.0" prefHeight="40.0" prefWidth="350.0" style="-fx-background-color: #919191; -fx-border-color: black;" text="Updated Runway Parameters">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+
+                            <Label alignment="CENTER" layoutY="120.0" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: #DEDEDE;" text="TORA">
+                                <font>
+                                    <Font size="14.0" />
+                                </font></Label>
+                            <Label fx:id="initialToraLabel" alignment="CENTER" layoutX="100.0" layoutY="120.0" prefHeight="40.0" prefWidth="350.0" style="-fx-border-color: black;" />
+                            <Label fx:id="updatedToraLabel" alignment="CENTER" layoutX="450.0" layoutY="120.0" prefHeight="40.0" prefWidth="350.0" style="-fx-border-color: black;" />
+                            <Label alignment="CENTER" layoutY="160.0" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: #DEDEDE;" text="TODA">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="initialTodaLabel" alignment="CENTER" layoutX="100.0" layoutY="160.0" prefHeight="40.0" prefWidth="350.0" style="-fx-border-color: black;" />
+                            <Label fx:id="updatedTodaLabel" alignment="CENTER" layoutX="450.0" layoutY="160.0" prefHeight="40.0" prefWidth="350.0" style="-fx-border-color: black;" />
+                            <Label alignment="CENTER" layoutY="200.0" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: #DEDEDE;" text="LDA">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="initialLdaLabel" alignment="CENTER" layoutX="100.0" layoutY="200.0" prefHeight="40.0" prefWidth="350.0" style="-fx-border-color: black;" />
+                            <Label fx:id="updatedLdaLabel" alignment="CENTER" layoutX="450.0" layoutY="200.0" prefHeight="40.0" prefWidth="350.0" style="-fx-border-color: black;" />
+                            <Label alignment="CENTER" layoutY="240.0" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: #DEDEDE;" text="ASDA">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="initialAsdaLabel" alignment="CENTER" layoutX="100.0" layoutY="240.0" prefHeight="40.0" prefWidth="350.0" style="-fx-border-color: black;" />
+                            <Label fx:id="updatedAsdaLabel" alignment="CENTER" layoutX="450.0" layoutY="240.0" prefHeight="40.0" prefWidth="350.0" style="-fx-border-color: black;" />
+
+                            <Label layoutY="280.0" prefHeight="40.0" prefWidth="400.0" style="-fx-border-color: dodgerblue; -fx-border-width: 2;" text="Breakdown of Calculations">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                                <padding>
+                                    <Insets left="10.0" />
+                                </padding>
+                            </Label>
+                            <TextArea fx:id="calculationsTextArea" editable="false" layoutY="320.0" prefHeight="280.0" prefWidth="400.0" style="-fx-border-color: dodgerblue;" wrapText="true" />
+
+                            <Label layoutX="400.0" layoutY="280.0" prefHeight="40.0" prefWidth="400.0" style="-fx-border-color: dodgerblue; -fx-border-width: 2;" text="Action Log">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                                <padding>
+                                    <Insets left="10.0" />
+                                </padding>
+                            </Label>
+                            <TextArea fx:id="actionLogTextArea" editable="false" layoutX="400.0" layoutY="320.0" prefHeight="280.0" prefWidth="400.0" style="-fx-border-color: dodgerblue;" wrapText="true" />
+                        </children>
+                    </AnchorPane>
+                </StackPane>
+            </content>
+        </Tab>
+
+        <Tab text="Actions">
+            <content>
+                <StackPane minHeight="600" minWidth="800" prefHeight="600" prefWidth="1200">
+                    <AnchorPane maxHeight="600" maxWidth="800" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0">
+                        <children>
+                            <Label layoutX="10.0" layoutY="20.0" prefHeight="20.0" prefWidth="240.0" text="Runway Parameters" underline="true">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="100.0" text="Predefined Runways" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <ChoiceBox fx:id="predefinedRunwayChoiceBox" layoutX="130.0" layoutY="55.0" prefHeight="30.0" prefWidth="115.0" onAction="#onPredefinedRunwaySelection" />
+                            <Label layoutX="10.0" layoutY="100.0" prefHeight="40.0" prefWidth="100.0" text="TORA">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="setTORATextField" layoutX="130.0" layoutY="105.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+                            <Label layoutX="10.0" layoutY="150.0" prefHeight="40.0" prefWidth="100.0" text="Clearway">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="setClearwayTextField" layoutX="130.0" layoutY="155.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+                            <Label layoutX="10.0" layoutY="200.0" prefHeight="40.0" prefWidth="100.0" text="Stopway">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="setStopwayTextField" layoutX="130.0" layoutY="205.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+                            <Label layoutX="10.0" layoutY="250.0" prefHeight="40.0" prefWidth="100.0" text="Displaced Threshold" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="setDisplacedThresholdTextField" layoutX="130.0" layoutY="255.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+
+                            <Separator layoutX="265.0" minWidth="0.0" orientation="VERTICAL" prefHeight="330.0" prefWidth="4.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-color: gray;" />
+
+                            <Label layoutX="280.0" layoutY="20.0" prefHeight="20.0" prefWidth="240.0" text="Obstacle" underline="true">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="280.0" layoutY="50.0" prefHeight="40.0" prefWidth="100.0" text="Predefined Obstacles" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <ChoiceBox fx:id="predefinedObstacleChoiceBox" layoutX="400.0" layoutY="55.0" onAction="#onPredefinedObstacleSelection" prefHeight="30.0" prefWidth="115.0" />
+                            <Label layoutX="280.0" layoutY="100.0" prefHeight="40.0" prefWidth="100.0" text="Name" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="obstacleNameTextField" layoutX="400.0" layoutY="105.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+                            <Label layoutX="280.0" layoutY="150.0" prefHeight="40.0" prefWidth="100.0" text="Height" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="obstacleHeightTextField" layoutX="400.0" layoutY="155.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+                            <Label layoutX="280.0" layoutY="200.0" prefHeight="40.0" prefWidth="100.0" text="Distance from Threshold" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="distanceFromThresholdTextField" layoutX="400.0" layoutY="205.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+                            <Label layoutX="280.0" layoutY="250.0" prefHeight="40.0" prefWidth="100.0" text="Distance from Centre Line" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="distanceFromCentrelineTextField" layoutX="400.0" layoutY="255.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+
+                            <Separator layoutX="532.0" minWidth="0.0" orientation="VERTICAL" prefHeight="330.0" prefWidth="4.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-color: gray;" />
+
+                            <Label layoutX="550.0" layoutY="20.0" prefHeight="20.0" prefWidth="240.0" text="Plane" underline="true">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="550.0" layoutY="50.0" prefHeight="40.0" prefWidth="100.0" text="Predefined Planes" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <ChoiceBox fx:id="predefinedPlaneChoiceBox" layoutX="670.0" layoutY="55.0" onAction="#onPredefinedPlaneSelection" prefHeight="30.0" prefWidth="115.0" />
+                            <Label layoutX="550.0" layoutY="100.0" prefHeight="40.0" prefWidth="100.0" text="ID">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="planeIDTextField" layoutX="670.0" layoutY="105.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+                            <Label layoutX="550.0" layoutY="150.0" prefHeight="40.0" prefWidth="100.0" text="Blast Protection" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="planeBlastProtectionTextField" layoutX="670.0" layoutY="155.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-width: 2; -fx-border-color: gray; -fx-padding: 0 0 0 4;" />
+
+                            <Separator focusTraversable="false" layoutY="330.0" minHeight="0.0" prefHeight="4.0" prefWidth="800.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-color: gray;" />
+
+                            <Label layoutX="10.0" layoutY="400.0" prefHeight="30.0" text="Action">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <ChoiceBox fx:id="actionChoiceBox" layoutX="90.0" layoutY="400.0" prefHeight="26.0" prefWidth="150.0" />
+                            <CheckBox fx:id="goingLeftBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="450.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="230.0" text="Reverse Direction" wrapText="true" />
+
+                            <Button alignment="CENTER" layoutX="588.0" layoutY="393.0" mnemonicParsing="false" onAction="#onRedeclareParameters" prefHeight="83.0" prefWidth="164.0" text="Redeclare Parameters" textAlignment="CENTER" textFill="#006b8f" wrapText="true">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Button>
+                        </children>
+                    </AnchorPane>
+                </StackPane>
+            </content>
+        </Tab>
+
+        <Tab text="Top View">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <StackPane fx:id="topDownStackPane" layoutY="30.0" prefHeight="150.0" prefWidth="200.0" translateX="35.0" translateY="70.0">
+                            <children>
+                                <ImageView fx:id="topDownBackground" fitHeight="450.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true" scaleX="1.075">
+                                    <image>
+                                        <Image url="@runwayImage1.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fx:id="topDownRunway" fitHeight="61.0" fitWidth="607.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@runwayImage2.png" />
+                                    </image>
+                                </ImageView>
+                                <Rectangle fx:id="displacedThreshold" arcHeight="5.0" arcWidth="5.0" fill="#d7cfcf" height="48.0" stroke="#081e0a" strokeType="INSIDE" translateX="-160.0" width="38.0" />
+                                <Rectangle fx:id="topViewClearway" arcHeight="5.0" arcWidth="5.0" fill="#fe1fff" height="55.0" stroke="BLACK" strokeType="INSIDE" translateX="328.0" width="50.0" />
+                                <Rectangle fx:id="topViewStopwayEnd" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" stroke="BLACK" strokeType="INSIDE" translateX="317.0" width="27.0" />
+                                <Rectangle fx:id="topViewStopwayStart" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" stroke="BLACK" strokeType="INSIDE" translateX="-317.0" width="27.0" />
+                                <ImageView fx:id="obstacleImage" fitHeight="59.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                                    <image>
+                                        <Image url="@obstacle.png" />
+                                    </image>
+                                </ImageView>
+                        <Label fx:id="headingNumL" rotate="90.0" text="09" translateX="-200.0" />
+                        <Label fx:id="headingPosL" rotate="90.0" text="L" translateX="-215.0" />
+                        <Label fx:id="headingNumR" rotate="270.0" text="27" translateX="200.0" />
+                        <Label fx:id="headingPosR" rotate="270.0" text="R" translateX="215.0" />
+                            </children>
+
+                        </StackPane>
+                        <Label fx:id="rotLabel" layoutX="379.0" layoutY="14.0" text="Heading" textFill="#b5acac">
+                            <font>
+                                <Font name="Cambria" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="rotationValueTopView" alignment="CENTER" layoutX="392.0" layoutY="47.0" text="0" textFill="#a927b5">
+                            <font>
+                                <Font name="System Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="minusRotateTopView" layoutX="294.0" layoutY="48.0" mnemonicParsing="false" onAction="#rotateObjectNegative" prefHeight="29.0" prefWidth="70.0" text="-" textAlignment="CENTER">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="plusRotateTopView" layoutX="460.0" layoutY="48.0" mnemonicParsing="false" onAction="#rotateObjectPositive" prefHeight="29.0" prefWidth="70.0" text="+">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+
+        <Tab text="Side View ">
+            <content>
+                <StackPane fx:id="sideViewStackPane">
+                    <children>
+                        <ImageView fx:id="sideViewRunwayImage" fitHeight="15" fitWidth="750" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@sideOnRunway.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

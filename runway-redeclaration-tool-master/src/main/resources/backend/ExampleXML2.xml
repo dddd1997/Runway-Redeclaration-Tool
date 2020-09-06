@@ -1,0 +1,34 @@
+<airport>
+    <runways>
+        <runway name = "09" position = "L" tora = "3902" displacedThreshold = "300" clearway = "200" stopway = "100">
+            <obstacle name = "foo" height = "5" dft = "100" dfc = "-10"/>
+
+            <plane id = "boing 747" blastProtection = "300"/>
+        </runway>
+
+        <runway name = "27" position = "R" tora = "3884" displacedThreshold = "0" clearway = "0" stopway = "0">
+            <plane id = "boing 767" blastProtection = "500"/>
+        </runway>
+
+        <runway name = "23" position = "R" tora = "3884" displacedThreshold = "0" clearway = "0" stopway = "0">
+            <obstacle name = "barfoo" height = "3" dft = "50" dfc = "-10"/>
+        </runway>
+
+        <runway name = "08" position = "L" tora = "3884" displacedThreshold = "97" clearway = "84" stopway = "30">
+            <obstacle name = "barfoo" height = "3" dft = "20" dfc = "15"/>
+            <plane id = "Tincan" blastProtection = "500"/>
+        </runway>
+
+        <runway name = "27" position = "R" tora = "3884" displacedThreshold = "0" clearway = "0" stopway = "0">
+        </runway>
+    </runways>
+
+    <preDefinedObstacle name = "bar" height = "20"/>
+
+    <preDefinedObstacle name = "foobar" height = "5"/>
+
+    <preDefinedPlane id = "de Havilland Dragon Rapide" blastProtection = "300"/>
+
+    <preDefinedPlane id = "boing 737-800" blastProtection = "400"/>
+
+</airport>

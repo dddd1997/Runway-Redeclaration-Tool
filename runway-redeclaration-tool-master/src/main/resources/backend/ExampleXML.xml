@@ -1,0 +1,22 @@
+<airport>
+    <runways>
+        <runway name = "09" position = "L" tora = "3902" displacedThreshold = "306" clearway = "0" stopway = "0">
+            <obstacle name = "foo" height = "15" dft = "100" dfc = "-10"/>
+ 
+            <plane id = "boing 747" blastProtection = "300"/>
+        </runway>
+        
+        <runway name = "27" position = "R" tora = "3884" displacedThreshold = "0" clearway = "0" stopway = "0">
+            <plane id = "boing 767" blastProtection = "500"/>
+        </runway>
+    </runways>
+    
+    <preDefinedObstacle name = "bar" height = "20"/>
+        
+    <preDefinedObstacle name = "foobar" height = "5"/>
+    
+    <preDefinedPlane id = "de Havilland Dragon Rapide" blastProtection = "300"/>
+    
+    <preDefinedPlane id = "boing 737-800" blastProtection = "400"/>
+
+</airport>
